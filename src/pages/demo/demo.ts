@@ -2,9 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 /*import "pixi";
 import "p2";*/
-import 'pixi';
-import 'p2';
-import * as Phaser from "phaser-ce";
+import { Game } from "./game/Game"
 
 
 
@@ -22,7 +20,7 @@ import * as Phaser from "phaser-ce";
 })
 export class DemoPage {
 
-  private game:Phaser;
+  private game:Game;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     
@@ -30,7 +28,8 @@ export class DemoPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DemoPage');
-    this.game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', null)
+    this.game = new Game();
+   
   }
 
 
